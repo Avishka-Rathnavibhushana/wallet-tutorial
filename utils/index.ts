@@ -1,5 +1,5 @@
 // Import any additional classes and/or functions needed from Solana's web3.js library as you go along:
-import { Cluster, Keypair } from "@solana/web3.js";
+import { Cluster, Keypair, clusterApiUrl, Connection } from "@solana/web3.js";
 import { message } from "antd";
 
 // *Step 3*: implement a function that gets an account's balance
@@ -13,8 +13,9 @@ const refreshBalance = async (network: Cluster | undefined, account: Keypair | n
     // Documentation References:
     //   https://solana-labs.github.io/solana-web3.js/classes/Connection.html
     //   https://solana-labs.github.io/solana-web3.js/modules.html#clusterApiUrl
-    console.log("Balance functionality not implemented yet!");
-    const connection = "";
+    //console.log("Balance functionality not implemented yet!");
+    const connection = new Connection(clusterApiUrl(network), "confirmed");
+    console.log(connection);
 
     // (c) get the key using one of the accessors on the account passed in as an argument
     // Documentation Reference: https://solana-labs.github.io/solana-web3.js/classes/Keypair.html
