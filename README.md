@@ -1,3 +1,6 @@
+# follow below tutorial 
+https://learn.figment.io/tutorials/solana-wallet-intro
+
 # Wallet Tutorial
 In this tutorial, you'll learn to develop a wallet for the [Solana](https://solana.com/) protocol. We will provide a simple [Next.js](https://nextjs.org/) application that you will complete by leveraging Solana's [JavaScript SDK](https://solana-labs.github.io/solana-web3.js/index.html). In the process, you'll dive into key concepts relevant to Web 3 and start to cultivate an understanding for what it takes to build decentralized applications (dApps).
 
