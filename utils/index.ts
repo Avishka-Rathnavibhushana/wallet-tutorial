@@ -26,7 +26,7 @@ const refreshBalance = async (network: Cluster | undefined, account: Keypair | n
     const balance = await connection.getBalance(publicKey);
     console.log(balance);
 
-    return balance;
+    return balance / LAMPORTS_PER_SOL;
     // (e) You can now delete the console.log statement since the function is implemented!
   } catch (error) {
     const errorMessage =
@@ -53,6 +53,7 @@ const handleAirdrop = async (network: Cluster | undefined, account: Keypair | nu
     // Documentation Reference: https://solana-labs.github.io/solana-web3.js/classes/Keypair.html
     const publicKey = account.publicKey;
 
+    console.log(publicKey);
     // (d) request the airdrop using the connection instance
     // Note that you should include the amount to airdrop (consider using the LAMPORTS_PER_SOL constant from the web3.js library)
     // Documentation Reference: https://solana-labs.github.io/solana-web3.js/classes/Connection.html
@@ -60,11 +61,11 @@ const handleAirdrop = async (network: Cluster | undefined, account: Keypair | nu
       publicKey,
       LAMPORTS_PER_SOL
     );
-
+    console.log(confirmation)
     // (d) confirm the transaction using the connection instance and the confirmation string returned from the airdrop
     // Documentation Reference: https://solana-labs.github.io/solana-web3.js/classes/Connection.html
     await connection.confirmTransaction(confirmation, "confirmed");
-
+      console.log("confirmed")
     // (e) Refactor the refreshBalance function to return balances in SOL instead of Lamports (Hint: LAMPORTS_PER_SOL)
 
     // This line returns the balance after the airdrop so the UI can be refreshed
