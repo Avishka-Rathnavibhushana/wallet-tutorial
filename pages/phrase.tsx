@@ -6,7 +6,7 @@ import { useGlobalState } from "../context";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useRouter } from "next/router";
 import * as Bip39 from "bip39";
-import {Keypair} from "@solana/web3.js";
+import { Keypair } from "@solana/web3.js";
 
 // Import Bip39 to generate a phrase and convert it to a seed:
 
@@ -44,7 +44,7 @@ const Phrase: NextPage = () => {
     // Documentation Reference:
     //   https://solana-labs.github.io/solana-web3.js/classes/Keypair.html
     //   https://solana-labs.github.io/solana-web3.js/classes/Keypair.html#fromSeed
-    const newAccount = null;
+    const newAccount = Keypair.fromSeed(seed);
 
     // This line sets the account to context state so it can be used by the app
     setAccount(newAccount);
