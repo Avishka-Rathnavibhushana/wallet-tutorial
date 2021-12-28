@@ -19,11 +19,12 @@ const refreshBalance = async (network: Cluster | undefined, account: Keypair | n
 
     // (c) get the key using one of the accessors on the account passed in as an argument
     // Documentation Reference: https://solana-labs.github.io/solana-web3.js/classes/Keypair.html
-    const publicKey = "";
+    const publicKey = account.publicKey;
 
     // (d) get the account's balance using the connection instance
     // Documentation Reference: https://solana-labs.github.io/solana-web3.js/classes/Connection.html
-    const balance = 0;
+    const balance = await connection.getBalance(publicKey);
+    console.log(balance);
 
     return balance;
     // (e) You can now delete the console.log statement since the function is implemented!
