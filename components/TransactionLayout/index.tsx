@@ -2,7 +2,7 @@
 import React, { useState, ReactElement } from "react";
 import { message } from "antd";
 import { useGlobalState } from "../../context";
-import { LAMPORTS_PER_SOL } from "@solana/web3.js";
+import { LAMPORTS_PER_SOL, Connection, clusterApiUrl } from "@solana/web3.js";
 const converter = require("number-to-words");
 import { LoadingOutlined } from "@ant-design/icons";
 import { refreshBalance } from "../../utils";
@@ -62,8 +62,7 @@ const TransactionModal = (): ReactElement => {
       // Documentation References:
       //   https://solana-labs.github.io/solana-web3.js/classes/Connection.html
       //   https://solana-labs.github.io/solana-web3.js/modules.html#clusterApiUrl
-      console.log("Sign and Send not yet implemented!");
-      const connection = "";
+      const connection = new Connection(clusterApiUrl(network), "confirmed");
       setTransactionSig("");
       // (c) leverage the SystemProgram class to create transfer instructions that include your account's public key, the public key from your sender field in the form, and the amount from the form
       // Documentation Reference:
